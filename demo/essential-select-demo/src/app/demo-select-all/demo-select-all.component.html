@@ -1,0 +1,418 @@
+<div>
+
+  <div>
+
+    <div class="flex-container">
+      <!--<div class="flex-item1" style="width: 386px">-->
+      <div class="flex-item">
+        <h3>
+          Simple
+        </h3>
+        Simple selected string from array with starts value: <br>
+        <b>V</b>alue: <b id="simpleTextModel">{{ simpleSelect }}</b>
+        <essential-select [options]="selectOptions2" id="simpleSelectComponent" #simpleSelectComponent
+                          [(value)]="simpleSelect"
+                          [placeholder]="'Click me'"
+                          [required]="true"
+                          [designMaterial]="materialDesign"
+                          [invalidText]="'Please select value!'">
+        </essential-select>
+
+        <div class="margin-top-xs">
+          <button class="btn btn-default" (click)="simpleSelect = null" id="setNullSimple">
+            Set null
+          </button>
+        </div>
+
+        <figure class="highlight">
+        <pre>
+          <code class="language-html">
+            {{codeSimple}}
+          </code>
+        </pre>
+        </figure>
+      </div>
+
+      <div class="flex-item">
+        <h3>
+          Search option by displayed name <br>
+        </h3>
+        Simple selected string from array with starts value: <br>
+        <b>V</b>alue: <b>{{ esWithSearch }}</b>
+        <essential-select [options]="selectOptions2"
+                          [(value)]="esWithSearch"
+                          [searchable]="true"
+                          [placeholder]="'Search some option'"
+                          [required]="true"
+                          [designMaterial]="materialDesign"
+                          [invalidText]="'Please select value!'">
+        </essential-select>
+
+        <div class="margin-top-xs">
+          <button class="btn btn-default" (click)="esWithSearch = undefined">
+            Set null
+          </button>
+        </div>
+        <figure class="highlight">
+        <pre>
+          <code class="language-html">
+            {{codeSimpleWithDisplayedName}}
+          </code>
+        </pre>
+        </figure>
+      </div>
+
+      <div class="flex-item">
+        <h3>
+          Auto truncate overflowed text
+        </h3>
+        Select long option <br>
+        <b>V</b>alue: <b style="word-break: break-all">
+        {{esLong}}
+      </b>
+        <!--<b>{{ esLong }}</b>-->
+        <essential-select [options]="seletOptionsLong"
+                          [(value)]="esLong"
+                          [searchable]="true"
+                          [placeholder]="'Click me'"
+                          [designMaterial]="materialDesign"
+                          [invalidText]="'Please select value!'">
+        </essential-select>
+      </div>
+    </div>
+
+    <div class="flex-container">
+
+      <div class="flex-item">
+        <h3>
+          Multiselect
+        </h3>
+        Select countries you have visited: <br>
+        <b>V</b>alue: <b>{{ multiselectModel | json }}</b>
+        <essential-select [options]="multiselectCountryOptions"
+                          [(value)]="multiselectModel"
+                          [fieldName]="'name'"
+                          [fieldValue]="'code'"
+                          [bindObject]="false"
+                          [wrapType]="wrapperType"
+                          [multiselect]="true"
+                          [placeholder]="'Click me'"
+                          [searchable]="false"
+                          [designMaterial]="materialDesign"
+                          [invalidText]="'Please select value!'">
+        </essential-select>
+        <figure class="highlight">
+        <pre>
+          <code class="language-html">
+            {{codeMultiselect}}
+          </code>
+        </pre>
+        </figure>
+
+        <div>
+          <b>
+            Note:
+          </b>
+          When use multiselect - you must pass array as initial input [value] param (it can be with initial value or
+          just empty array).
+          Undefined or null is not allowed as input value
+        </div>
+
+      </div>
+
+      <div class="flex-item">
+        <h3>
+          Select id in object
+        </h3>
+        Where are you now? <br>
+        <b>V</b>alue: <b>{{ yourCountry | json }}</b>
+        <essential-select [options]="multiselectCountryOptions"
+                          [(value)]="yourCountry"
+                          [fieldName]="'name'"
+                          [fieldValue]="'code'"
+                          [bindObject]="false"
+                          [wrapType]="wrapperType"
+                          [placeholder]="'Click me'"
+                          [searchable]="false"
+                          [designMaterial]="materialDesign"
+                          [invalidText]="'Please select value!'">
+        </essential-select>
+        <figure class="highlight">
+        <pre>
+          <code class="language-html">
+            {{codeYourCountry}}
+          </code>
+        </pre>
+        </figure>
+      </div>
+
+      <div class="flex-item">
+        <h3>
+          Mulltiselect id in object with search
+        </h3>
+        Where are you now? <br>
+        <b>V</b>alue: <b id="multiselectSearchInputBind">{{ multiselectSearchInputModel | json }}</b>
+        <essential-select [options]="multiselectCountryOptions" #multiselectSearchInputSelect
+                          [(value)]="multiselectSearchInputModel"
+                          [fieldName]="'name'"
+                          [fieldValue]="'code'"
+                          [bindObject]="false"
+                          [wrapType]="wrapperType"
+                          [multiselect]="true"
+                          [placeholder]="'Click me'"
+                          [searchable]="true"
+                          [designMaterial]="materialDesign"
+                          [invalidText]="'Please select value!'">
+        </essential-select>
+        <figure class="highlight">
+        <pre>
+          <code class="language-html">
+            {{codeYourCountryWithSearch}}
+          </code>
+        </pre>
+        </figure>
+
+        <button class="btn" (click)="setCoutry(['RU', 'US', 'NO'])">
+          set outside
+        </button>
+      </div>
+
+    </div>
+
+    <div class="flex-container">
+
+      <div class="flex-item">
+        <h3>
+          Misc
+        </h3>
+        Where are you now? <br>
+        <b>V</b>alue: <b>{{ yourCountry | json }}</b>
+        <essential-select [options]="multiselectCountryOptions"
+                          [(value)]="yourCountry"
+                          [fieldName]="'name'"
+                          [fieldValue]="'code'"
+                          [bindObject]="false"
+                          [wrapType]="wrapperType"
+                          [placeholder]="'Click me'"
+                          [disabled]="disabledCountrySelect"
+                          [searchable]="true"
+                          [designMaterial]="materialDesign"
+                          [invalidText]="'Please select value!'">
+        </essential-select>
+
+        <div style="margin-top: 5px">
+          <button class="btn btn-default" (click)="disabledCountrySelect = !disabledCountrySelect">
+            Change disable
+          </button>
+        </div>
+
+        <figure class="highlight">
+        <pre>
+          <code class="language-html">
+            {{codeYourCountry}}
+          </code>
+        </pre>
+        </figure>
+      </div>
+
+      <div class="flex-item">
+        <h3>
+          Deny to select some value
+        </h3>
+        Where are you now? <br>
+        <b>V</b>alue: <b>{{ yourCountry | json }}</b>
+        <essential-select [options]="multiselectCountryOptions"
+                          [(value)]="yourCountry"
+                          [fieldName]="'name'"
+                          [fieldValue]="'code'"
+                          [bindObject]="false"
+                          [wrapType]="wrapperType"
+                          [placeholder]="'Click me'"
+                          [disabled]="disabledCountrySelect"
+                          [searchable]="true"
+                          [designMaterial]="materialDesign"
+                          [settings]="countryPrintableAllowed"
+                          [invalidText]="'Please select value!'">
+        </essential-select>
+
+        <!--<div style="margin-top: 5px">-->
+        <!--<button class="btn btn-default" (click)="disabledCountrySelect = !disabledCountrySelect">-->
+        <!--Change disable-->
+        <!--</button>-->
+        <!--</div>-->
+
+        <figure class="highlight">
+        <pre>
+          <code class="language-html">
+            {{codeYourCountryDisable}}
+          </code>
+
+        </pre>
+        </figure>
+
+        <figure class="highlight">
+          <pre>
+        <code class="language-typescript">
+            {{codeYourCountryDisableTs}}
+          </code>
+        </pre>
+        </figure>
+      </div>
+
+      <div class="flex-item">
+        <h3>
+          Dropdown width
+        </h3>
+        Strategy to determine dropdown width: <br>
+        <b>V</b>alue: <b>{{ wrapperType }}</b>
+        <essential-select [options]="wrapperTypes"
+                          [(value)]="wrapperType"
+                          [fieldName]="'name'"
+                          [fieldValue]="'value'"
+                          [bindObject]="false"
+                          [wrapType]="wrapperType"
+                          [placeholder]="'Click me'"
+                          [searchable]="false"
+                          [designMaterial]="materialDesign"
+                          [invalidText]="'Please select value!'">
+        </essential-select>
+        <pre>
+          <code class="language-html" data-lang="html">
+            {{codeDropdownWidth}}
+          </code>
+        </pre>
+        <br>
+
+        Essential select will automatically update internal value from outside changes <br>
+
+        <ul>
+          <li style="margin-top: 5px; list-style: none">
+            <button (click)="setWrapperAuto()" class="btn btn-default">
+              Set Auto
+            </button>
+          </li>
+          <li style="margin-top: 5px; list-style: none">
+            <button (click)="setWrapperMatchContent()" class="btn btn-default">
+              Set MatchContent
+            </button>
+          </li>
+          <li style="margin-top: 5px; list-style: none">
+            <button (click)="setWrapperMatchForm()" class="btn btn-default">
+              Set Match Form
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <div class="flex-item">
+      </div>
+
+      <div class="flex-item">
+      </div>
+
+    </div>
+
+    <div class="flex-container">
+
+      <div class="flex-item">
+        <h3>
+          TODO: example EssentialSelectOptions
+        </h3>
+
+        <ul>
+          <li>
+            row classes
+          </li>
+          <li>
+            additional rows
+          </li>
+          <li>
+            dynamic row content
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="flex-item">
+        <h3>
+          TODO: virtual scroll
+        </h3>
+        Works with a lot of values: <br>
+        <b>V</b>alue: <b id="scollVirualId">{{ virualScollValsValue }}</b>
+        <essential-select [options]="virualScollVals" id="scollVirualIdComponentId" #scollVirualIdComponent
+                          [(value)]="virualScollValsValue"
+                          [placeholder]="'Click me'"
+                          [designMaterial]="materialDesign"
+                          [invalidText]="'Please select value!'">
+        </essential-select>
+
+        <figure class="highlight">
+        <pre>
+          <code class="language-html">
+            <!--TODO: -->
+            {{codeSimple}}
+          </code>
+        </pre>
+        </figure>
+      </div>
+
+    </div>
+
+
+    <h2>
+      Documentation
+    </h2>
+
+    <h4>
+      Input params
+    </h4>
+
+    <div style="overflow: auto;">
+
+      <table class="table table-bordered table-striped table-dark2">
+
+        <thead>
+        <th>
+          Param
+        </th>
+        <th>
+          Descroption
+        </th>
+        <th>
+          Type
+        </th>
+        <th>
+          Example
+        </th>
+
+        </thead>
+
+        <tbody>
+        <tr>
+          <td>
+            [(value)]
+          </td>
+          <td>
+            is used as model
+          </td>
+          <td>
+            Any
+          </td>
+          <td>
+            ="value"
+          </td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+    <b>
+      TODO: docuemnt all
+    </b>
+
+
+  </div>
+</div>

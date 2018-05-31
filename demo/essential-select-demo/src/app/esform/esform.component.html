@@ -1,0 +1,74 @@
+<div style="width: 30%">
+
+  <h4>
+    Angular form integration
+  </h4>
+
+  <div class="row" style="margin-top: 15px">
+    <div class="col-md-6">
+      <div>
+        <b>
+          Form value:
+        </b>
+        <pre>{{ form.value | json }}</pre>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="btn-group">
+        <button class="btn btn-default" (click)="changeRequired()">
+          Change required
+        </button>
+
+        <button class="btn" (click)="form.reset()" style="margin-left: 5px">
+          Reset
+        </button>
+      </div>
+      <br>
+
+      <div class="margin-top-xs">
+        <div>
+          Is valid form: <b>{{form.valid}}</b>
+        </div>
+        <div>
+          Is required select: <b>{{isRequired}}</b>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 5px">
+    <form #form="ngForm" id="form1" (submit)="doSubmit()">
+      <b>
+        Simple text:
+      </b> (required)<br>
+      <input [(ngModel)]="superValueVal" id="superValue" class="form-control" type="text" name="superValue"
+             #superValue required>
+
+      <div class="margin-top-xs">
+
+        <b>Select:</b> <br>
+        <essential-select
+          #esSelects
+          name="counter"
+          ngModel
+          [options]="selectOptions2"
+          [required]="isRequired"
+          [placeholder]="'Select something'"
+        >
+        </essential-select>
+      </div>
+
+      <div class="btn-group pull-right">
+        <button class="btn btn-primary" type="submit" style="margin-top: 5px">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <pre>
+          <code class="language-html" data-lang="html">
+            {{esNgForm}}
+          </code>
+        </pre>
+
+</div>
+

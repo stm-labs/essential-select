@@ -1,0 +1,39 @@
+@import '~bootstrap/scss/bootstrap';
+@import '../../styles';
+
+.flex-container {
+  @extend .row;
+}
+
+.flex-item {
+  @extend .col-md-6,.col-lg-4,.col-sm-12,.col-xl-4;
+  position: relative;
+}
+
+@include media-breakpoint-between(md, xl) {
+  .flex-container {
+    padding: 15px
+  }
+}
+
+.highlight {
+ @extend .margin-top-xs;
+}
+
+
+$option-depth-padding-level: 5px;
+
+.depth-1 {
+  padding-left: $option-depth-padding-level * 0;
+}
+
+.depth-2 {
+  padding-left: $option-depth-padding-level * 3;
+}
+.depth-3 {
+  padding-left: $option-depth-padding-level * 8;
+}
+
+.btn-default {
+  background-color: #dddddd80 !important;
+}

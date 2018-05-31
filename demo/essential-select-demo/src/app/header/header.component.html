@@ -1,0 +1,58 @@
+<div>
+  <!-- TODO: mobile navbar-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" [ngClass]="{'navbar-expand':openNavbar}">
+    <a class="navbar-brand" href="#">
+      <h1>
+        Essential select
+      </h1>
+    </a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" (click)="openNavbar = true"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a [routerLink]="['/form']" class="nav-link" [ngClass]="{'active-link': router.url === '/form'}">
+            NgForm
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/demo_all']" class="nav-link" [ngClass]="{'active-link': router.url === '/demo_all'}">
+            Examples
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://github.com/NBakaev/angular-essential-select" class="nav-link" target="_blank">
+            Github
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="!useBootstrap">
+          <button (click)="useBootstrap = !useBootstrap" class="btn btn-default">
+            Enable bootstrap
+          </button>
+        </li>
+        <li class="nav-item">
+          <a (click)="clickedMaterialDesign()" class="clickable nav-link" target="_blank" [ngClass]="{'active-link': useMaterialDesign}">
+            Material design
+          </a>
+        </li>
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0">
+        <h2 style="font-size: 15px; margin-top: 10px">
+          Angular select component
+        </h2>
+
+      </form>
+      <form class="form-inline my-2 my-lg-0" style="margin-left: 10px">
+        <a href="https://badge.fury.io/js/angular-essential-select"><img
+          src="https://badge.fury.io/js/angular-essential-select.svg" alt="npm version" height="18"></a>
+      </form>
+    </div>
+  </nav>
+</div>
+
+<div *ngIf="useBootstrap">
+  <app-bootstrap-integration></app-bootstrap-integration>
+</div>
