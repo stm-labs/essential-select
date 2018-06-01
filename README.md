@@ -1,5 +1,10 @@
 # STM Essential Select
 
+[![Travis Widget]][Travis]
+
+[Travis]: https://travis-ci.org/stm-labs/essential-select
+[Travis Widget]: https://travis-ci.org/stm-labs/essential-select.svg?branch=master
+
 STM Angular select component
 
  - AOT compatible
