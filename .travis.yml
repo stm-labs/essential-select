@@ -1,0 +1,7 @@
+udo: required
+services:
+- docker
+language: node_js
+node_js:
+  - "10"
+script: ci/ci_all.sh

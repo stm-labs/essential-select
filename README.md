@@ -55,6 +55,11 @@ To lint all `*.ts` files:
 $ npm run lint
 ```
 
+Publish - go to dist folder and run
+```bash
+npm publish --access=public
+```
+
 ## License
 
 MIT © [STM Labs](http://stm-labs.ru)
