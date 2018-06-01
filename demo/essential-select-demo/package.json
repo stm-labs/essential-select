@@ -1,5 +1,5 @@
 {
-  "name": "essential-select-demo",
+  "name": "stm-essential-select-demo",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -10,7 +10,7 @@
     "test:dev": "ng test --browsers Chrome --watch true",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "link:es": "npm link angular-essential-select"
+    "link:es": "npm link essential-select"
   },
   "private": false,
   "dependencies": {

@@ -1,4 +1,4 @@
-# Angular Essential Select
+# STM Essential Select
 
 STM Angular select component
 
@@ -9,10 +9,8 @@ STM Angular select component
 
 ## Installation
 
-To install this library, run:
-
 ```bash
-$ npm install angular-essential-select --save
+$ npm i @stm-labs/essential-select --save
 ```
 
 and then import EssentialSelectModule in your Angular `AppModule`:
@@ -21,7 +19,7 @@ and then import EssentialSelectModule in your Angular `AppModule`:
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import {EssentialSelectModule} from 'angular-essential-select';
+import {EssentialSelectModule} from 'essential-select';
 
 @NgModule({
   declarations: [

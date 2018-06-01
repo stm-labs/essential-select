@@ -1,21 +1,25 @@
 {
-  "name": "angular-essential-select",
-  "version": "3.0.0",
+  "name": "@stm-labs/essential-select",
+  "private": false,
+  "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NBakaev/angular-essential-select"
+    "url": "https://github.com/stm-labs/essential-select"
   },
   "author": {
-    "name": "Nikita Bakaev",
-    "email": "ya@nbakaev.ru"
+    "name": "STM Labs",
+    "email": "developer@stm-labs.ru"
   },
   "keywords": [
+    "stm",
+    "stm-labs",
     "angular",
-    "angular select"
+    "angular select",
+    "select"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NBakaev/angular-essential-select/issues"
+    "url": "https://github.com/stm-labs/essential-select/issues"
   },
   "main": "angular-essential-select.umd.js",
   "module": "angular-essential-select.js",

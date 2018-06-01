@@ -1,6 +1,7 @@
 {
-  "name": "angular-essential-select",
-  "version": "3.0.0",
+  "name": "@stm-labs/essential-select",
+  "private": false,
+  "version": "1.0.0",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
@@ -16,18 +17,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/NBakaev/angular-essential-select"
+    "url": "https://github.com/stm-labs/essential-select"
   },
   "author": {
-    "name": "Nikita Bakaev",
-    "email": "ya@nbakaev.ru"
+    "name": "STM Labs",
+    "email": "developer@stm-labs.ru"
   },
   "keywords": [
     "angular"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NBakaev/angular-essential-select/issues"
+    "url": "https://github.com/stm-labs/essential-select/issues"
   },
   "devDependencies": {
     "@angular/common": "^6.0.0",
