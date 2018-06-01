@@ -4,4 +4,7 @@ services:
 language: node_js
 node_js:
   - "10"
-script: ci/ci_all.sh
+script: "$BASE_DIR/ci/ci_all.sh"
+env:
+  global:
+  - BASE_DIR="`pwd`"
