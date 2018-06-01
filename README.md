@@ -5,8 +5,8 @@
 [Travis]: https://travis-ci.org/stm-labs/essential-select
 [Travis Widget]: https://travis-ci.org/stm-labs/essential-select.svg?branch=master
 
-[NPM]: https://www.npmjs.com/package/stm-labs/essential-select
-[NPM Widget]: https://badge.fury.io/js/stm-labs/essential-select.svg
+[NPM]: https://www.npmjs.com/package/@stm-labs/essential-select
+[NPM Widget]: https://badge.fury.io/js/@stm-labs/essential-select.svg
 
 STM Angular select component
 
